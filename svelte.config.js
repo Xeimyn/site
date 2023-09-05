@@ -8,7 +8,6 @@ const config = {
     adapter: adapter(),
     paths: {
       base: dev ? '' : process.env.BASE_PATH,
-      precompress: true,
     }
   }
 };

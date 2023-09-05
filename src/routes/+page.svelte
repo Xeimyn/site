@@ -4,39 +4,40 @@
     import Icons from './Icons.svelte';
     import Links from './Links.svelte';
     import Logo from './Logo.svelte';
+
+	// Add a way to toggle this
+	let lightMode = false
+
 </script>
 
 <!------------- TODO ------------->
 <!------------ mobile ------------>
 
-<div class="styleWrapper">
-	<body class="flex-center">
-		<div class="slider flex-center">
-			<Logo />
-			<div class="slider-left slider-side">
-				<div class="TextSection">
-					<h3 class="title">Hi, I'm Simon</h3>
-					<Typewriter />
-					<Links />
-					<Icons />
-				</div>
-			</div>
-			<div class="slider-right slider-side">
-				<img class="arrow" src="arrow.svg" alt="arrow pointing to the right">
+<body class="flex-center" class:light-mode={lightMode}>
+	<div class="slider flex-center">
+		<Logo />
+		<div class="slider-left slider-side">
+			<div class="TextSection">
+				<h3 class="title">Hi, I'm Simon</h3>
+				<Typewriter />
+				<Links />
+				<Icons />
 			</div>
 		</div>
-	</body>
-</div>
+		<div class="slider-right slider-side">
+			<img class="arrow" src="arrow.svg" alt="arrow pointing to the right">
+		</div>
+	</div>
+</body>
 
 <style>
 	:root {
 		--slider-size: 1
 	}
 
-	/* For light mode someday™ */
-	/* .styleWrapper {
+	 .light-mode {
 		filter: invert();
-	} */
+	}
 
 	.flex-center {
 		display: flex;

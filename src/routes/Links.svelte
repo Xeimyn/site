@@ -37,7 +37,7 @@
 </style>
 
 <div class="linkContainer">
-	<a href="projects" class="link">Projects</a>
-	<a href="thoughts" class="link">Thoughts</a>
+	<a href="/" class="link">Projects</a>
+	<a href="/" class="link">Thoughts</a>
 	<a href="https://discord.gg/jP9Um5rUKR" target="_blank" class="link">Todo</a>
 </div>

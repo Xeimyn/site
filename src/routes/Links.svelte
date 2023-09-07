@@ -1,3 +1,13 @@
+<script>
+	import { base } from '$app/paths';
+</script>
+
+<div class="linkContainer">
+	<a href="{base}/projects" class="link">Projects</a>
+	<a href="{base}/thoughts" class="link">Thoughts</a>
+	<a href="https://discord.gg/jP9Um5rUKR" target="_blank" class="link">Todo</a>
+</div>
+
 <style>
 	.link {
 		font-family: Roboto;
@@ -36,13 +46,3 @@
 }
 
 </style>
-
-<script>
-	import { base } from '$app/paths';
-</script>
-
-<div class="linkContainer">
-	<a href="{base}/" class="link">Projects</a>
-	<a href="{base}/" class="link">Thoughts</a>
-	<a href="https://discord.gg/jP9Um5rUKR" target="_blank" class="link">Todo</a>
-</div>

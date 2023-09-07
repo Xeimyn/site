@@ -6,6 +6,7 @@
     import Logo from './Logo.svelte';
 
 	// Add a way to toggle this
+
 	let lightMode = false
 
 </script>
@@ -65,7 +66,9 @@
 		display: flex;
 		aspect-ratio: 1.03896104	;
 		min-width: calc(400px * var(--slider-size));
+		max-width: calc(37vw * var(--slider-size));
 		min-height: calc(385px * var(--slider-size));
+		max-height: calc(50vh * var(--slider-size));
 		width: calc(38vw * var(--slider-size));
 		height: calc(65vh * var(--slider-size));
 		border-top: 0.5vmin solid white;

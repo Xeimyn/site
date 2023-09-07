@@ -42,38 +42,38 @@
 	onMount(() => {
 	  type(); // Start the typewriter effect after the component mounts
 	});
-  </script>
+	</script>
 
-  <style>
-	.typewriter {
-		font-family: Roboto;
-		color: white;
-		font-size: max(2.8vw,29.3px);
-		font-weight: 400;
-		margin: 0;
-		border-bottom: 1.1vmin dashed white;
-		padding-bottom: max(1vh,6px);
-		overflow: hidden;
-	}
-	.typewriter::before {
-		content: "A ";
-	}
+<div class="typewriter" bind:this={textElement}></div>
 
-	.typewriter::after {
-		position: absolute;
-		content: "┃";
-		font-family: monospace;
-		animation: blink 1s infinite;
-	}
+<style>
+.typewriter {
+	font-family: Roboto;
+	color: white;
+	font-size: max(2.8vw,29.3px);
+	font-weight: 400;
+	margin: 0;
+	border-bottom: 1.1vmin dashed white;
+	padding-bottom: max(1vh,6px);
+	overflow: hidden;
+}
+.typewriter::before {
+	content: "A ";
+}
+
+.typewriter::after {
+	position: absolute;
+	content: "┃";
+	font-family: monospace;
+	animation: blink 1s infinite;
+}
 
 
-	@keyframes blink {
-    0%, 100% {
-      color: white;
-    }
-    50% {
-      color: black;
-    }
-  }  </style>
-
-  <div class="typewriter" bind:this={textElement}></div>
+@keyframes blink {
+0%, 100% {
+	color: white;
+}
+50% {
+	color: black;
+}
+}  </style>

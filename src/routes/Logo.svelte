@@ -15,8 +15,8 @@
 </script>
 
 <style>
-	.logo {
-		border: 0.5vmin solid white;
+.logo {
+	border: 0.5vmin solid white;
 	border-radius: 69%;
 	min-width: 420px;
 	width: 38vw;

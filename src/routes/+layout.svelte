@@ -16,8 +16,8 @@
 
 <div style="transition: 0.5s;" class:lightMode={lightMode}>
 	<button class="modeToggle" on:click={toggleLightMode} class:rotated={lightMode}>
-		<img class="themeIcon sun" src="icons/github.svg" alt="Sun">
-		<img class="themeIcon moon" src="icons/twitter.svg" alt="Moon">
+		<img class="themeIcon sun" src="icons/github.svg" alt="Sun Icon (Turn on light mode)">
+		<img class="themeIcon moon" src="icons/twitter.svg" alt="Moon Icon (Turn off light mode">
 	</button>
 	<slot></slot>
 </div>
@@ -42,12 +42,12 @@
 	}
 	
 	.moon {
-		right: 2.5vw;
+		right: 2vw;
+		padding-bottom: 1vw;
 		transform: rotate(-90deg);
 	}
 	
 	.modeToggle {
-		opacity: 30%;
 		transition: 0.5s transform;
 		position: absolute;
 		top: 0;

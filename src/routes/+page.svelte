@@ -67,7 +67,7 @@
 	}
 
 	.slider-left {
-		border-radius: 999px 0px 0px 999px;
+		border-radius: 100% 0px 0px 100%;
 		border-left: 0.5vmin solid white;
 		flex-direction: column;
 		align-items: flex-end;
@@ -75,7 +75,7 @@
 	}
 
 	.slider-right {
-		border-radius: 0px 999px 900px 0px;
+		border-radius: 0px 100% 100% 0px;
 		border-right: 0.5vmin solid white;
 		align-items: center;
 	}

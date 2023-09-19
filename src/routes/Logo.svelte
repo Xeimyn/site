@@ -18,7 +18,7 @@
 .logo {
 	border: 0.5vmin solid white;
 	border-radius: 69%;
-	min-width: 420px;
+	min-width: 38vw;
 	width: 38vw;
 	aspect-ratio: 1;
 	z-index: 5;
@@ -33,6 +33,7 @@
 }
 
 .logoImg {
+	min-width: 80%;
 	max-width: 80%;
 }
 

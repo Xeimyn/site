@@ -4,17 +4,12 @@
     import Icons from './Icons.svelte';
     import Links from './Links.svelte';
     import Logo from './Logo.svelte';
-
-	// Add a way to toggle this
-
-	let lightMode = false
-
 </script>
 
 <!------------- TODO ------------->
 <!------------ mobile ------------>
 
-<body class="flex-center" class:light-mode={lightMode}>
+<body class="flex-center">
 	<div class="slider flex-center">
 		<Logo />
 		<div class="slider-left slider-side">
@@ -35,15 +30,11 @@
 	:root {
 		--slider-size: 1
 	}
-
-	 .light-mode {
-		filter: invert();
-	}
-
 	.flex-center {
 		display: flex;
 		justify-content: center;
 		align-items: center;
+		overflow: hidden;
 	}
 
 	.TextSection {

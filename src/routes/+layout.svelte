@@ -47,7 +47,8 @@
 	}
 	
 	.modeToggle {
-		transition: 0.5s;
+		opacity: 30%;
+		transition: 0.5s transform;
 		position: absolute;
 		top: 0;
 		right: 0;

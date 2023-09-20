@@ -1,4 +1,5 @@
 <script>
+	import { base } from '$app/paths';	
 	import { lightModeStore } from './store.js';
 
 	let lightMode;
@@ -16,8 +17,8 @@
 
 <div style="transition: 0.5s;" class:lightMode={lightMode}>
 	<button class="modeToggle" on:click={toggleLightMode} class:rotated={lightMode}>
-		<img class="themeIcon sun" src="themeIcons/Sun.svg" alt="Sun Icon (Turn on light mode)">
-		<img class="themeIcon moon" src="themeIcons/Moon.svg" alt="Moon Icon (Turn off light mode">
+		<img class="themeIcon sun" src="{base}/themeIcons/Sun.svg" alt="Sun Icon (Turn on light mode)">
+		<img class="themeIcon moon" src="{base}/themeIcons/Moon.svg" alt="Moon Icon (Turn off light mode">
 	</button>
 	<slot></slot>
 </div>

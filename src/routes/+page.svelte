@@ -1,9 +1,9 @@
 
 <script>
-	import Typewriter from './Typewriter.svelte';
-    import Icons from './Icons.svelte';
-    import Links from './Links.svelte';
-    import Logo from './Logo.svelte';
+	import Typewriter from './mainSiteLib/Typewriter.svelte';
+    import Icons from './mainSiteLib/Icons.svelte';
+    import Links from './mainSiteLib/Links.svelte';
+    import Logo from './mainSiteLib/Logo.svelte';
 </script>
 
 <!------------- TODO ------------->

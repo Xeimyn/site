@@ -12,7 +12,12 @@
 		"@sveltejs/adapter-static": "^2.0.3",
 		"@sveltejs/kit": "^1.20.4",
 		"svelte": "^4.0.5",
-		"vite": "^4.4.2"
+		"vite": "^4.4.2",
+		"vite-plugin-node-stdlib-browser": "^0.2.1"
 	},
-	"type": "module"
+	"type": "module",
+	"dependencies": {
+		"bcryptjs": "^2.4.3",
+		"node-stdlib-browser": "^1.2.0"
+	}
 }

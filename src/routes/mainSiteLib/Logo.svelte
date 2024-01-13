@@ -43,6 +43,6 @@
 
 </style>
 
-<button class="logo no-select" class:move={showContent} on:click={toggleShowContent}>
+<button title="Click me!" class="logo no-select" class:move={showContent} on:click={toggleShowContent}>
 	<img src="logo.svg" alt="JCMS" class="logoImg">
 </button>

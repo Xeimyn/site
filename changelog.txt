@@ -1,1 +1,2 @@
 20/09/23 - Added Light mode and light mode toggle button
+13/01/24 - Removed Light mode cause fuck light mode lol

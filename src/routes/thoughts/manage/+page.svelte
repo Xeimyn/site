@@ -1,9 +1,9 @@
 <script>
 	import { isAuthenticated } from './thoughtsManageSiteLib/store.js';
-	import { password } from './thoughtsManageSiteLib/store.js';
+	import { passwordStore } from './thoughtsManageSiteLib/store.js';
 
 	let authenticated
-	let pw
+	let password
 	
 	// Subscribe to the store and initialize isAuthenticated
 	isAuthenticated.subscribe(value => {
@@ -11,94 +11,76 @@
 	});
 
 	// Subscribe to the store and initialize isAuthenticated
-	password.subscribe(value => {
-	pw = value;
+	passwordStore.subscribe(value => {
+	password = value;
 	});
+		
+  function tryAuth() {
+	// disable input item
+	document.getElementById('password').disabled = true;
 	
-	function tryAuth(password) {	
-	console.log(password)
-		// do stuff
-	if (password == "password") {
-		pw = password
-		authenticated = true
-	}
-	// do stuff
+	fetch('http://api.jcms.dev/auth', {
+		method : 'POST',
+		mode   : 'cors',
+		headers: {
+			'Content-Type': 'application/json'
+		},
+		body: JSON.stringify({
+			pw: password
+		})
+	})
+	.then(response => response.json())
+	.then(
+		data => {
+			if (data === true) {
+				isAuthenticated.set(true);
+			}
+			else {
+				isAuthenticated.set(false);
+				alert("If you're not Simon please fuck off <3 (wrong password)");					
+				document.getElementById('password').value = "";
+				document.getElementById('password').disabled = false;
+				document.getElementById('password').focus();
+			}
+		}
+	)
 }
-	
+
+function getTitlesAndDates() {
+	return fetch('http://api.jcms.dev/getTitlesAndDates', {
+		method : 'POST',
+		mode   : 'cors',
+		headers: {
+			'Content-Type': 'application/json'
+		},
+		body: JSON.stringify({
+			pw: password
+		})
+	})
+}
 </script>
 
 <body>	
-	{#if authenticated == true}
+	{#if authenticated === true}
 		<div class="mainContainer">
-			<!-- {#await } -->
-				<!-- <h2 class="loading">Loading</h2>			 -->
-			<!-- {:then }  -->
-				<div class="thoughtsTable">
-					<!-- {#each thoughts as thought} -->
-						<div class="item"></div>
-						<div class="item"></div>
-						<div class="item"></div>
-						<div class="item"></div>
-						<div class="item"></div>
-						<div class="item"></div>
-						<div class="item"></div>
-						<div class="item"></div>
-					<!-- {/each} -->
-				</div>
-			<!-- {/await} -->
-			<div class="passwordText" style="color:white">Your Password is <mark class="blur">{pw}</mark></div>	
+			<h2 style="color:white">Logged in!</h2>
+			<div class="passwordText" style="color:white">Your Password is <mark class="blur">{password}</mark></div>	
 		</div>
 	{:else}
 	<div class="pwContainer">
-		<!-- only set the value if they key pressed is the enter key -->
-		<input on:input={e => tryAuth(e.target.value)} title="If you're not Simon fuck off <3" placeholder="PASSWORD" type="password" name="password" id="password" class="passwordInput">
+		<form on:submit|preventDefault={() => tryAuth()}>
+			<input bind:value={password} title="If you're not Simon please fuck off <3" placeholder="PASSWORD" type="password" name="password" id="password" class="passwordInput">
+		</form>
 	</div>
 	{/if}
 </body>
 
 <style>
-	.loading {
-		font-family: roboto;
-		font-size: 90pt;
-		color: white;
-		height: fit-content	;
-		margin: 0;
-		margin-top: 40vh;
-		animation: infinite rotate 0.2s linear;
-	}
-	
-	@keyframes rotate {
-		0% {
-			color: black;
-		}
-		50% {
-			color: white;
-		}
-		100% {
-			color: black;
-			transform: rotate(360deg);
-		}
-	}
-	
 	.mainContainer {
 		display: flex;
 		justify-content: center;
 		width: 100vw;
 		height: 100vh;
-	}
-	
-	.thoughtsTable {
-		/* 6 columns, n rows */
-		/* date views(if possible have a ranking and graph later) title(hyperlink) public(toggle) edit(new menu) delete(with confirm) */
-		display: grid; 
-		min-width: 200px;
-		background-color: gray;
-	}
-	
-	.item {
-		background-color: white;
-		width: 50px;
-		height: 50px;
 	}
 	
 	.passwordInput::placeholder {

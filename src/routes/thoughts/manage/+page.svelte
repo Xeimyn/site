@@ -19,7 +19,7 @@
 	// disable input item
 	document.getElementById('password').disabled = true;
 	
-	fetch('http://api.jcms.dev/auth', {
+	fetch('https://api.jcms.dev/auth', {
 		method : 'POST',
 		mode   : 'cors',
 		headers: {

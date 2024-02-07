@@ -1,70 +1,49 @@
 <script>
 	import { isAuthenticated } from './thoughtsManageSiteLib/store.js';
 	import { passwordStore } from './thoughtsManageSiteLib/store.js';
+	import API from './thoughtsManageSiteLib/api.js';
+	import { onMount } from 'svelte';
+	import ManageThought from './thoughtsManageSiteLib/manageThought.svelte';
 
-	let authenticated
-	let password
 	
-	// Subscribe to the store and initialize isAuthenticated
-	isAuthenticated.subscribe(value => {
-	authenticated = value;
-	});
-
-	// Subscribe to the store and initialize isAuthenticated
-	passwordStore.subscribe(value => {
-	password = value;
-	});
-		
-  function tryAuth() {
-	// disable input item
-	document.getElementById('password').disabled = true;
+	// Subscribe to stores
+	$: authenticated = $isAuthenticated;
+	$: password = $passwordStore;
 	
-	fetch('https://api.jcms.dev/auth', {
-		method : 'POST',
-		mode   : 'cors',
-		headers: {
-			'Content-Type': 'application/json'
-		},
-		body: JSON.stringify({
-			pw: password
-		})
-	})
-	.then(response => response.json())
-	.then(
-		data => {
-			if (data === true) {
-				isAuthenticated.set(true);
-			}
-			else {
-				isAuthenticated.set(false);
-				alert("If you're not Simon please fuck off <3 (wrong password)");					
-				document.getElementById('password').value = "";
-				document.getElementById('password').disabled = false;
-				document.getElementById('password').focus();
-			}
+	// do some stuff
+	let passwordInput
+	let api
+	
+	onMount (() => {
+		api = new API()
+		passwordInput = document.getElementById('password');
+		passwordInput.focus()
+	});
+	
+	async function tryAuth() {
+		passwordInput.disabled = true;	
+		authenticated = await api.authenticate(password);
+		if (authenticated === false) {
+			alert("If you're not Simon please fuck off <3 (wrong password)");					
+			passwordInput.value = "";
+			passwordInput.disabled = false;
+			passwordInput.focus();
 		}
-	)
-}
-
-function getTitlesAndDates() {
-	return fetch('http://api.jcms.dev/getTitlesAndDates', {
-		method : 'POST',
-		mode   : 'cors',
-		headers: {
-			'Content-Type': 'application/json'
-		},
-		body: JSON.stringify({
-			pw: password
-		})
-	})
-}
+	}
 </script>
 
 <body>	
 	{#if authenticated === true}
 		<div class="mainContainer">
-			<h2 style="color:white">Logged in!</h2>
-			<div class="passwordText" style="color:white">Your Password is <mark class="blur">{password}</mark></div>	
+			{#await api.getTitlesAndDates(password)}
+			<!-- Placeholder loading thingy -->
+				<p style="color:white">Loading...</p>
+			{:then data}
+				{#each JSON.parse(data.message.replace(/'/g, '"').replace(/\(/g, "[").replace(/\)/g, "]")) as thought}
+					<ManageThought title={thought[0]} date={thought[1]}/>
+				{/each} 
+			{/await}
+			<div class="passwordText">Your Password is <mark class="blur">{password}</mark></div>	
 		</div>
 	{:else}
 	<div class="pwContainer">
@@ -78,9 +57,10 @@ function getTitlesAndDates() {
 <style>
 	.mainContainer {
 		display: flex;
-		justify-content: center;
+		align-items: center;
 		width: 100vw;
 		height: 100vh;
+		flex-direction: column;
 	}
 	
 	.passwordInput::placeholder {

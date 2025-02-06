@@ -1,3 +1,4 @@
+<!-- TODO | convert into real component with for loop and such -->
 
 <div class="Icons">
 	<a class="icon" href="https://dc.jcms.dev" target="_blank"><img class="iconImg" src="icons/discord.svg" alt="Join my discord server!"></a>
@@ -11,29 +12,27 @@
 <style>
 
 .Icons {
-	min-width: 305px;
-	min-height: 31px;
-	border-top: 1.1vmin dashed white;
-	padding-top: 1vh;
 	display: flex;
 	justify-content: center;
 	align-items: center;
-	gap: max(2vw,20px);
+	width: 100%;
+	gap: 2vw;
 }
 
 .icon {
 	background-color: black;
-	border: none;
-	min-height: 31.5px;
-	min-width: 31.5px;
-	height: 3vw;
-	width: 3vw;
+	height: 2.8vw;
+	aspect-ratio: 1;
 	cursor: pointer;
 	transition: 200ms filter;
 	border-radius: 69%;
 	display: flex;
 	justify-content: center;
 	align-items: center;
+}
+
+.iconImg {
+	height: 50%;
 }
 
 .icon:hover{

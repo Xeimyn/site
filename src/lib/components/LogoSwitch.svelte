@@ -1,5 +1,5 @@
 <script>
-	import { showContentStore } from './store.js';
+	import { showContentStore } from '../stores';
 
 	let showContent;
 
@@ -16,14 +16,13 @@
 
 <style>
 .logo {
-	border: 0.5vmin solid white;
 	border-radius: 69%;
-	min-width: 38vw;
-	width: 38vw;
+	border: 0.5vmin solid white;
+	width: 36vw;
 	aspect-ratio: 1;
 	z-index: 5;
 	position: absolute;
-	transform: translateX(-48%);
+	transform: translateX(-20%);
 	transition: 700ms transform;
 	display: flex;
 	align-items: center;
@@ -40,7 +39,7 @@
 }
 
 .move {
-	transform: translateX(48%);
+	transform: translateX(85%);
 }
 
 .attention::after {
@@ -71,5 +70,5 @@
 </style>
 
 <button title="Click me!" class="logo no-select" class:attention={!showContent} class:move={showContent} on:click={toggleShowContent}>
-	<img src="logo.svg" alt="JCMS" class="logoImg">
+	<img src="./assets/logo.svg" alt="JCMS" class="logoImg">
 </button>

@@ -1,25 +1,43 @@
 <!DOCTYPE html>
 <html lang="en">
 	<head>
+		<!-- Encoding -->
 		<meta charset="utf-8" />
-		<link rel="icon" href="%sveltekit.assets%/favicon.ico" />
-		<meta name="viewport" content="width=device-width" />
-		<meta name="JCMS.DEV">
-		<meta name="description" content="JustCallMeSimon | Personal Site">
+		<!-- SEO & embed -->
+		<meta name="keywords" content="Xeimyn,xeimyn,developer,simon"/>
+		<meta name="description" content="Xeimyn | Personal Site">
+		<meta name="author" content="Xeimyn">
+		<!-- Doing what everyone is doing -->
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<!-- Favicon -->
+		<link rel="icon" href="%sveltekit.assets%/assets/favicon.ico" />
 		<link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
-		<title>JCMS.DEV</title>
 		%sveltekit.head%
 	</head>
-	<body data-sveltekit-preload-data="hover">
+	<body data-sveltekit-preload-data="tap">
 		<div style="display: contents">%sveltekit.body%</div>
 	</body>
 </html>
 
 <style>
+	/* General Theme */
 	body {
 		background-color: black;
 		min-height: 100vh;
 		min-width: 100vw;
 		margin: 0;
+	}
+
+	/* UTIL */
+	.flex-center {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+	}
+
+	.flex-center-column {
+		display: flex;
+		justify-content: center;
+		flex-direction: column;
 	}
 </style>

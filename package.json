@@ -17,7 +17,6 @@
 	},
 	"type": "module",
 	"dependencies": {
-		"bcryptjs": "^2.4.3",
 		"node-stdlib-browser": "^1.2.0"
 	}
 }

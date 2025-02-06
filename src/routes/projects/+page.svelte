@@ -21,7 +21,7 @@
 		];
 
 		const options = {
-			radius:250,
+			radius:280,
 			reverseDirection:true,
 			maxSpeed:"fast",
 			useHTML:true,
@@ -30,34 +30,40 @@
 		let myTagCloud = TagCloud(container, texts, options)
 		var rootEl = document.getElementsByClassName('tagcloud')[0];
 		rootEl.addEventListener('click', clickEventHandler);
-
 })
-
-
 </script>
 
 <div class="flex-center full">
 	<h2 class="title">Projects</h2>
 	<div class="tagcloud" style="border: 2px solid white;"></div>
+	<!-- <a href="https://xeimyn.dev" class="back">Back</a> -->
 </div>
 <style>
 
 	.title {
 		color: white;
-		font-size: 14vh;
+		font-size: 10vh;
 		margin-bottom: 3vh;
 		margin-top: 3vh;
 		text-decoration: underline;
 	}
 
-	.full {
-		flex-direction: column;
-		height: 100vh;
-	}
 
 	.tagcloud {
 		color: white;
-		padding: 20px;
+	}
+
+	.full {
+		display: flex;
+		flex-direction: column;
+	}
+
+	.tagcloud {
+		width: 70vmin;
+		aspect-ratio: 1;
+		display: flex;
+		align-items: center;
+		justify-content: center;
 	}
 
 	:global(.tagcloud--item) {

@@ -43,7 +43,7 @@
 <style>
 .typewriter {
 	font-family: Roboto;
-	color: white;
+	color: var(--accent-clr);
 	font-size: 2.7vw;
 	font-weight: 400;
 	margin: 0;
@@ -63,10 +63,10 @@
 
 @keyframes blink {
 	0%, 100% {
-		color: white;
+		color: var(--accent-clr);
 	}
 	50% {
-		color: black;
+		color: var(--background-clr);
 	}
 }
 </style>

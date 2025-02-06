@@ -1,31 +1,37 @@
 <script>
+	export let links
+
 	import { base }  from '$app/paths';
 </script>
 
-<!-- TODO | Convert into real component with for loop too -->
-
 <div class="linkContainer">
-	<a href="{base}/projects" class="link">Projects</a>
+	{#each links as link}
+		{#if link.internal}
+			<a href='{base}{link.link}' class="link">{link.name}</a>
+			{:else}
+			<a href='{link.link}' class="link">{link.name}</a>
+		{/if}
+	{/each}
 </div>
 
 <style>
 	.link {
 		font-family: Roboto;
-		color: white;
+		color: var(--accent-clr);
 	}
 
 	.linkContainer {
 		display: flex;
 		justify-content: center;
 		align-items: center;
-		gap: max(2vw,20px);
+		gap: 2vw;
 		margin: 0;
 		margin-top: max(2vh,2vmin);
 		margin-bottom: max(2vh,2vmin);
 	}
 
 	.link {
-		background-color: black;
+		background-color: var(--background-clr);
 		text-align: center;
 		font-size: 2.2vw;
 		font-style: normal;
@@ -35,12 +41,10 @@
 		transition: 200ms filter;
 		padding-left: max(0.5vw,2vmin);
 		padding-right: max(0.5vw,2vmin);
-		border-radius: 2vmin;
+		border-radius: var(--border-width);
 	}
 
-
 	.link:hover{
-	filter:invert();
-}
-
+		filter:invert();
+	}
 </style>

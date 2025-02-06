@@ -20,8 +20,8 @@
 		align-items: center;
 		gap: max(2vw,20px);
 		margin: 0;
-		margin-top: max(2vh,10px);
-		margin-bottom: max(2vh,10px);
+		margin-top: max(2vh,2vmin);
+		margin-bottom: max(2vh,2vmin);
 	}
 
 	.link {
@@ -33,8 +33,8 @@
 		line-height: normal;
 		text-decoration-line: underline;
 		transition: 200ms filter;
-		padding-left: max(0.5vw,5px);
-		padding-right: max(0.5vw,5px);
+		padding-left: max(0.5vw,2vmin);
+		padding-right: max(0.5vw,2vmin);
 		border-radius: 2vmin;
 	}
 

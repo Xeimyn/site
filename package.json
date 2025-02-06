@@ -17,6 +17,7 @@
 	},
 	"type": "module",
 	"dependencies": {
-		"node-stdlib-browser": "^1.2.0"
+		"node-stdlib-browser": "^1.2.0",
+		"TagCloud": "^2.5.0"
 	}
 }

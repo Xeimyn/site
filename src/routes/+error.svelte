@@ -19,7 +19,7 @@
 	<h1 class="text">{$page.status} - {$page.error.message}</h1>
 	{#await getImage()}
 		<h2 class="text">Looking for a cute cat...</h2>
-	{:then _}
+	{:then}
 		{#if randomCatImage}
 			<h2 class="text">Found one!</h2>
 			<!-- svelte-ignore a11y-click-events-have-key-events -->
@@ -50,6 +50,7 @@
 	}
 
 	.img404 {
+		aspect-ratio: initial;
 		border-color: white;
 		max-width: 80%;
 		max-height: 30%;
@@ -59,6 +60,7 @@
 		min-height: 0px;
 	}
 	.img404:hover {
+		aspect-ratio: initial;
 		border-color: white;
 		min-height: 96vh;
 		max-width: 90vw;

@@ -29,7 +29,7 @@
 	}
 
 	.border {
-		border-bottom: 6px dashed white;
+		border-bottom: 1vmin dashed white;
 		margin-top: max(1vh,0.5vw);
 		margin-bottom: max(1vh,0.5vw);
 	}

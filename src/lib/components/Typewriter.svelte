@@ -44,7 +44,7 @@
 .typewriter {
 	font-family: Roboto;
 	color: white;
-	font-size: 2.8vw;
+	font-size: 2.7vw;
 	font-weight: 400;
 	margin: 0;
 	overflow: hidden;

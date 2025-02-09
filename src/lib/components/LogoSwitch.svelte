@@ -37,8 +37,8 @@
 }
 
 .logoImg {
-	min-width: 80%;
-	max-width: 80%;
+	width: 65vmin;
+	aspect-ratio: 1;
 }
 
 .move {

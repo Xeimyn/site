@@ -21,7 +21,7 @@
 		<h2 class="text">Looking for a cute cat...</h2>
 	{:then}
 		{#if randomCatImage}
-			<h2 class="text">Found one!</h2>
+			<h2 class="text">Found a cute kitty!</h2>
 			<!-- svelte-ignore a11y-click-events-have-key-events -->
 			<!-- svelte-ignore a11y-no-noninteractive-element-interactions -->
 			<!-- Disabling it is fine, i made sure to adjust the pointer in css and give it a title that tells you that you can click it -->
@@ -45,6 +45,7 @@
 	}
 
 	.text {
+		font-size: 2vw;
 		color: white;
 		font-family: Roboto;
 	}
@@ -68,4 +69,6 @@
 		z-index: 5;
 		transform: translateY(-3vh);
 	}
+
+
 </style>

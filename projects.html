@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<!-- Encoding -->
+		<meta charset="utf-8" />
+		<!-- SEO & embed -->
+		<meta name="keywords" content="Xeimyn,xeimyn,developer,simon"/>
+		<meta name="description" content="Xeimyn | Personal Site">
+		<meta name="author" content="Xeimyn">
+		<!-- Doing what everyone is doing -->
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<!-- Favicon -->
+		<link rel="icon" href="./favicon.ico" />
+		<link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+		
+		<link href="./_app/immutable/assets/4.a17c3d8d.css" rel="stylesheet">
+		<link rel="modulepreload" href="./_app/immutable/entry/start.eeb3836d.js">
+		<link rel="modulepreload" href="./_app/immutable/chunks/scheduler.b909ebf8.js">
+		<link rel="modulepreload" href="./_app/immutable/chunks/singletons.e70e9b78.js">
+		<link rel="modulepreload" href="./_app/immutable/chunks/index.5b05a7f2.js">
+		<link rel="modulepreload" href="./_app/immutable/chunks/paths.bacfd2fc.js">
+		<link rel="modulepreload" href="./_app/immutable/entry/app.25301ecd.js">
+		<link rel="modulepreload" href="./_app/immutable/chunks/index.64cdb55c.js">
+		<link rel="modulepreload" href="./_app/immutable/nodes/0.07a45444.js">
+		<link rel="modulepreload" href="./_app/immutable/nodes/4.8f21f080.js">
+	</head>
+	<body data-sveltekit-preload-data="tap">
+		<div style="display: contents">  <div class="flex-center full svelte-14tnjs5"><h2 class="title svelte-14tnjs5" data-svelte-h="svelte-9n01v1">Projects</h2> <div class="tagcloud" style="border: 0.5vmin solid white;"></div> <a href="https://xeimyn.dev" class="button svelte-1lb9pw4">Back</a> </div> 
+			
+			<script>
+				{
+					__sveltekit_40ka4w = {
+						base: new URL(".", location).pathname.slice(0, -1),
+						env: {}
+					};
+
+					const element = document.currentScript.parentElement;
+
+					const data = [null,null];
+
+					Promise.all([
+						import("./_app/immutable/entry/start.eeb3836d.js"),
+						import("./_app/immutable/entry/app.25301ecd.js")
+					]).then(([kit, app]) => {
+						kit.start(app, element, {
+							node_ids: [0, 4],
+							data,
+							form: null,
+							error: null
+						});
+					});
+				}
+			</script>
+		</div>
+	</body>
+</html>
+
+<style>
+	:root {
+		--background-clr: black;
+		--accent-clr: white;
+		--border-width: 0.5vmin
+	}
+
+	/* General Theme */
+	body {
+		background-color: var(--background-clr);
+		min-height: 100vh;
+		min-width: 100vw;
+		margin: 0;
+	}
+
+	/* UTIL */
+	.flex-center {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+	}
+
+	.flex-center-column {
+		display: flex;
+		justify-content: center;
+		flex-direction: column;
+	}
+</style>

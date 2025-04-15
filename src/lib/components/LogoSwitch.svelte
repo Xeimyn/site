@@ -1,5 +1,5 @@
 <script>
-	import { showContentStore } from './store.js';
+	import { showContentStore } from '../stores';
 
 	let showContent;
 
@@ -14,33 +14,35 @@
 	}
 </script>
 
+<button title="Click me!" class="logo no-select" class:attention={!showContent} class:move={showContent} on:click={toggleShowContent}>
+	<img src="./assets/logo.svg" alt="JCMS" class="logoImg">
+</button>
+
 <style>
 .logo {
-	border: 0.5vmin solid white;
 	border-radius: 69%;
-	min-width: 38vw;
-	width: 38vw;
+	border: var(--border-width) solid var(--accent-clr);
+	width: 37vw;
 	aspect-ratio: 1;
-	z-index: 5;
+	z-index: 2;
 	position: absolute;
-	transform: translateX(-48%);
-	transition: 700ms transform;
+	transform: translateX(-20%);
+	transition: 600ms transform cubic-bezier(.47,1.44,.41,.8);
 	display: flex;
 	align-items: center;
 	justify-content: center;
-	background-color: black;
+	background-color: var(--background-clr);
 	cursor: pointer;
+
 }
 
-
-
 .logoImg {
-	min-width: 80%;
-	max-width: 80%;
+	width: 65vmin;
+	aspect-ratio: 1;
 }
 
 .move {
-	transform: translateX(48%);
+	transform: translateX(85%);
 }
 
 .attention::after {
@@ -58,7 +60,7 @@
 @keyframes shockwave {
   0% {
 	transform: scale(1);
-	box-shadow: 0 0 2px rgba(0,0,0,0.15), inset 0 0 1px rgba(0,0,0,0.15);
+	box-shadow: 0 0 2px rgba(0,0,0,0.2), inset 0 0 1px rgba(0,0,0,0.2);
   }
   95% {
 	box-shadow: 0 0 50px rgba(0,0,0,0), inset 0 0 30px rgba(0,0,0,0);
@@ -67,9 +69,4 @@
 	transform: scale(1.13);
   }
 }
-
 </style>
-
-<button title="Click me!" class="logo no-select" class:attention={!showContent} class:move={showContent} on:click={toggleShowContent}>
-	<img src="logo.svg" alt="JCMS" class="logoImg">
-</button>

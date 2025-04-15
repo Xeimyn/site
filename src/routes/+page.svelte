@@ -1,87 +1,66 @@
 
 <script>
-	import Typewriter from './mainSiteLib/Typewriter.svelte';
-    import Icons from './mainSiteLib/Icons.svelte';
-    import Links from './mainSiteLib/Links.svelte';
-    import Logo from './mainSiteLib/Logo.svelte';
+	import LeftSide from '../lib/collections/LeftSide.svelte';
 </script>
 
-<!------------- TODO ------------->
-<!------------ mobile ------------>
-
-<body class="flex-center">
-	<div class="slider flex-center">
-		<Logo />
-		<div class="slider-left slider-side">
-			<div class="TextSection">
-				<h3 class="title">Hi, I'm Simon</h3>
-				<Typewriter />
-				<Links />
-				<Icons />
+<body>
+	<div class="content flex-center">
+		<div class="slider flex-center">
+			<div class="left side flex-center">
+				<div class="left-active flex-center-column">
+					<LeftSide/>
+				</div>
 			</div>
-		</div>
-		<div class="slider-right slider-side">
-			<img class="arrow" src="arrow.svg" alt="arrow pointing to the right">
+			<div class="right side flex-center">
+				<div class="right-active flex-center">
+					<img src="./assets/arrow.svg" alt="" class="arrow">
+				</div>
+			</div>
 		</div>
 	</div>
 </body>
 
 <style>
-	:root {
-		--slider-size: 1
-	}
-	.flex-center {
-		display: flex;
-		justify-content: center;
-		align-items: center;
-		overflow: hidden;
+	.content {
+		height: 100vh;
 	}
 
-	.TextSection {
-		display: flex;
-		flex-direction: column;
-		justify-content: center;
-		padding-right: 2vw;
+	.slider {
+		width:70vw;
+		aspect-ratio: 2;
 	}
 
-	.title {
-		font-size: max(5vw,52.5px);
-		font-weight: 400;
-		line-height: max(10vh, 59px);
-		margin: 0;
-		font-family: Roboto;
-		color: white;
+	.side {
+		width: 50%;
+		height: 100%;
+		border: var(--border-width) solid var(--accent-clr);
 	}
 
-	.slider-side {
-		display: flex;
-		aspect-ratio: 1.03896104	;
-		min-width: calc(400px * var(--slider-size));
-		max-width: calc(37vw * var(--slider-size));
-		min-height: calc(32vw * var(--slider-size));
-		max-height: calc(50vh * var(--slider-size));
-		width: calc(38vw * var(--slider-size));
-		height: calc(65vh * var(--slider-size));
-		border-top: 0.5vmin solid white;
-		border-bottom: 0.5vmin solid white;
+	.left {
+		border-radius: 69% 0% 0% 69%;
+		border-right: none;
 	}
 
-	.slider-left {
-		border-radius: 100% 0px 0px 100%;
-		border-left: 0.5vmin solid white;
-		flex-direction: column;
-		align-items: flex-end;
-		justify-content: center;
+	.left-active {
+		height: 80%;
+		width: 80%;
+		margin-left: 10%;
 	}
 
-	.slider-right {
-		border-radius: 0px 100% 100% 0px;
-		border-right: 0.5vmin solid white;
-		align-items: center;
+	.right {
+		border-radius: 0% 69% 69% 0%;
+		border-left: none;
+	}
+
+	.right-active {
+		height: 80%;
+		width: 80%;
+		margin-right: 10%;
+		justify-content: left;
 	}
 
 	.arrow {
-		min-width: 200px;
-		width: 19vw;
+		height: 70%;
+		aspect-ratio: 1;
 	}
 </style>

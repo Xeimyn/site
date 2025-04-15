@@ -2,13 +2,7 @@
 	import { onMount } from 'svelte';
 
 	let textElement;
-	let strings = [
-		"self taught developer", // main
-		"random german guy",	 // well i am
-		"python user (it good)", // python
-		"public data enjoyer",   // osint
-		"free life appreciator", // well, ye again
-];
+	export let strings
 	let stringIndex = 0;
 	let charIndex = 0;
 	let isDeleting = false;
@@ -34,7 +28,7 @@
 		if (isDeleting) {
 			setTimeout(type, 40); // Typing speed
 		} else {
-			setTimeout(type, Math.random() * 180 + 70); // Randomise Typing speed if its not deleting
+			setTimeout(type, Math.random() * 100 + 70); // Randomise Typing speed if its not deleting
 		}
 	  }
 	}
@@ -49,12 +43,10 @@
 <style>
 .typewriter {
 	font-family: Roboto;
-	color: white;
-	font-size: max(2.8vw,29.3px);
+	color: var(--accent-clr);
+	font-size: 2.7vw;
 	font-weight: 400;
 	margin: 0;
-	border-bottom: 1.1vmin dashed white;
-	padding-bottom: max(1vh,6px);
 	overflow: hidden;
 }
 .typewriter::before {
@@ -70,10 +62,11 @@
 
 
 @keyframes blink {
-0%, 100% {
-	color: white;
+	0%, 100% {
+		color: var(--accent-clr);
+	}
+	50% {
+		color: var(--background-clr);
+	}
 }
-50% {
-	color: black;
-}
-}  </style>
+</style>

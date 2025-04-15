@@ -28,11 +28,11 @@
 			<img class="img404 ctm-border" on:click={() => getImage()} src={randomCatImage} title="Click to get a different image" alt="A (probably) really cute cat :3" />
 		{:else}
 			<h2 class="description text">This is not a valid url and... id show you a cute cat but that didnt work :c</h2>
-			<img class="img404 ctm-border" src="{base}/logo.svg" alt="JCMS" title="just my logo :c (take at least this cat: 🐈)" />
+			<img class="img404 ctm-border" src="{base}/logo.svg" alt="Xeimyn" title="just my logo :c (take at least this cat: 🐈)" />
 		{/if}
 	{/await}
 </div>
-
+	
 <style>
 	.content {
 		height: 100vh;

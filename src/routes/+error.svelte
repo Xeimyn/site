@@ -32,7 +32,7 @@
 		{/if}
 	{/await}
 </div>
-	
+
 <style>
 	.content {
 		height: 100vh;
@@ -47,7 +47,6 @@
 	.text {
 		font-size: 2vw;
 		color: white;
-		font-family: Roboto;
 	}
 
 	.img404 {

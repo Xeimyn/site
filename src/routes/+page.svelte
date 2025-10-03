@@ -19,7 +19,7 @@
 </body>
 
 <style>
-	@import url('https://fonts.googleapis.com/css2?family=Boston+Traffic&display=swap');
+	@import url('https://fonts.cdnfonts.com/css/boston-traffic');
 
 	.content {
 		height: 100vh;
@@ -44,7 +44,7 @@
 		font-family: "Boston Traffic", sans-serif;
 		font-size: 25vh;
 		color: var(--accent-clr);
-		letter-spacing: 0.7vw;
+		letter-spacing: 0.4vw;
 		/* Stretch it out vertically */
 		transform-origin: top;
 		transform: scaleY(1.5);

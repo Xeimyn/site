@@ -1,0 +1,35 @@
+[
+	{
+		"type" : "project",
+		"data" : {
+			"title" : "YEAR",
+			"description" : "A progress bar for the current year"
+		},
+		"link" : {
+			"live" : "https://year.jcms.dev",
+			"local" : "/year"
+		}
+	},
+	{
+		"type" : "idea",
+		"data" : {
+			"title" : "YEAR 2",
+			"description" : "Another progress bar for the current year"
+		},
+		"link" : {
+			"live" : "https://year.jcms.dev",
+			"local" : "/year"
+		}
+	},
+	{
+		"type" : "thought",
+		"data" : {
+			"title" : "YEAR 3",
+			"description" : "Another (again) progress bar for the current year"
+		},
+		"link" : {
+			"live" : "https://year.jcms.dev",
+			"local" : "/year"
+		}
+	}
+]
